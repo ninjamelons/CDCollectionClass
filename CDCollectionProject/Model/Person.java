@@ -24,5 +24,8 @@ public class Person
     {
         this.name = name;
         this.address = address;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.phoneNo = phoneNo;
     }
 }

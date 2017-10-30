@@ -19,4 +19,10 @@ public class Person
     {
         
     }
+    
+    public Person(String name, String address, String city, int postalCode, int phoneNo)
+    {
+        this.name = name;
+        this.address = address;
+    }
 }

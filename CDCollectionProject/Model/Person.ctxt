@@ -3,4 +3,6 @@ comment0.target=Person
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Person\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Person()
-numComments=2
+comment2.params=name\ address\ city\ postalCode\ phoneNo
+comment2.target=Person(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int)
+numComments=3

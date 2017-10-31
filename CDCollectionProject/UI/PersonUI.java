@@ -99,10 +99,14 @@ public class PersonUI
 
     private void checkFriendStatus()
     {
+        Object person = personController.getFriend();
+        printFriendDetails(person.getName(),person.getAddress(),person.getCity(),
+                           person.getPostalCode(),person.getPhoneNo());
+        person.getCurrentLoan();
     }
 
     private void printFriendDetails(String name, String address, String city,
-    String postalCode, String phoneNo)
+                                    String postalCode, String phoneNo)
     {
         System.out.println("      Friend Details       ");
         System.out.println("   Name: " + name );
@@ -110,5 +114,10 @@ public class PersonUI
         System.out.println("   City: " + city );
         System.out.println("   Postal Code: " + postalCode );
         System.out.println("   Phone Number: " + phoneNo );
+    }
+    
+    private void getLoanDetails(String name)
+    {
+        System.out.println("       Loan Details        ");
     }
 }

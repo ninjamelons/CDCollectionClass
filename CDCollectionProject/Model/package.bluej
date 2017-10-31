@@ -1,15 +1,18 @@
 #BlueJ package file
-objectbench.height=216
+dependency1.from=PersonContainer
+dependency1.to=Person
+dependency1.type=UsesDependency
+objectbench.height=300
 objectbench.width=934
 package.divider.horizontal=0.6
-package.divider.vertical=0.6758720930232558
-package.editor.height=458
+package.divider.vertical=0.675818373812038
+package.editor.height=633
 package.editor.width=844
-package.editor.x=100
-package.editor.y=100
-package.frame.height=788
+package.editor.x=-7
+package.editor.y=0
+package.frame.height=1047
 package.frame.width=974
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=6
 package.showExtends=true
 package.showUses=true

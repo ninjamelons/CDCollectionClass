@@ -13,15 +13,15 @@ public class Person
     private String name;
     private String address;
     private String city;
-    private int postalCode;
-    private int phoneNo;
+    private String postalCode;
+    private String phoneNo;
     
     public Person()
     {
         
     }
     
-    public Person(String name, String address, String city, int postalCode, int phoneNo)
+    public Person(String name, String address, String city, String postalCode, String phoneNo)
     {
         this.name = name;
         this.address = address;
@@ -30,8 +30,30 @@ public class Person
         this.phoneNo = phoneNo;
     }
     
-    public String getFriendName()
+    public String getName()
     {
         return name;
     }
+    
+    public String getAddress()
+    {
+        return address;
+    }
+    
+    public String getCity()
+    {
+        return city;
+    }
+    
+    public String getPostalCode()
+    {
+        return postalCode;
+    }
+    
+    public String getPhoneNo()
+    {
+        return phoneNo;
+    }
+    
+    public L
 }

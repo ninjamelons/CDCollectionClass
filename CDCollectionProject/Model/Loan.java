@@ -1,35 +1,51 @@
 package Model;
 
+import java.util.*;
 
-/**
- * Write a description of class Loan here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Loan
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Loan
-     */
+{    
+    private Date borrowerDate = new Date();
+    private int period;
+    private boolean state;    
+    
     public Loan()
     {
-        // initialise instance variables
-        x = 0;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public Loan(Date borrowerDate, int period, boolean state)
     {
-        // put your code here
-        return x + y;
+        this.borrowerDate = borrowerDate;
+        this.period = period;
+        this.state = state;
+    }
+    
+    public Date getBorrowerDate()
+    {
+        return borrowerDate;
+    }
+    
+    public void setBorrowerDate(Date borrowerDate)
+    {
+        this.borrowerDate = borrowerDate;
+    }
+    
+    public int getPeriod()
+    {
+        return period;
+    }
+    
+    public void setPeriod(int period)
+    {
+        this.period = period;
+    }
+    
+    public boolean getState()
+    {
+        return state;
+    }
+    
+    public void setState(boolean state)
+    {
+        this.state = state;
     }
 }

@@ -29,4 +29,9 @@ public class Person
         this.postalCode = postalCode;
         this.phoneNo = phoneNo;
     }
+    
+    public String getFriendName()
+    {
+        return name;
+    }
 }

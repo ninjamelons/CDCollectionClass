@@ -10,7 +10,7 @@ public class PersonContainer
         friends = new HashSet<>();
     }
     
-    private void addPerson(Person person)
+    public void addPerson(Person person)
     {
         if(person != null)
         {
@@ -18,5 +18,18 @@ public class PersonContainer
         }
         else
             System.out.println("Error 404: Person not found");
+    }
+    
+    public Person getPerson(String name)
+    {
+        Person result = null;
+        for(Person person : friends)
+        {
+            if(person.getFriendName().equals(name))
+            {
+                result = person;
+            }
+        }
+        return result;
     }
 }

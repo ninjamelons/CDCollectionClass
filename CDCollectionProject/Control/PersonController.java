@@ -9,11 +9,22 @@ import Model.*;
  */
 public class PersonController
 {
-    
+    private PersonContainer personContainer;
     
     public PersonController()
     {
-        
+        personContainer = new PersonContainer();
     }
     
+    public void addPerson(Person person)
+    {
+        personContainer.addPerson(person);
+    }
+    
+    public Person getPerson(String name)
+    {
+        Person result = null;
+        result = personContainer.getPerson(name);
+        return result;
+    }
 }

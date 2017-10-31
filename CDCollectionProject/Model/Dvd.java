@@ -1,35 +1,62 @@
 package Model;
 
-
-/**
- * Write a description of class Dvd here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Dvd
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Dvd
-     */
+    long barcode;
+    String title;
+    String artist;
+    int publicationDate;
+    
     public Dvd()
     {
-        // initialise instance variables
-        x = 0;
+        
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public Dvd(long barcode, String title, String artist, int publicationDate)
     {
-        // put your code here
-        return x + y;
+        this.barcode = barcode;
+        this.title = title;
+        this.artist = artist;
+        this.publicationDate = publicationDate;        
+    }     
+   
+    public long getBarcode()
+    {
+        return barcode;
+    }    
+    
+    public void setBarcode(long barcode)
+    {
+        this.barcode = barcode;
+    }
+    
+    public String getTitle()
+    {
+        return title;
+    }
+    
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }
+    
+    public String getArtist()
+    {
+        return artist;
+    }
+    
+    public void setArtist(String artist)
+    {
+        this.artist = artist;
+    }
+    
+    public int getPublicationDate()
+    {
+        return publicationDate;
+    }
+    
+    public void setPublicationDate(int publicationDate)
+    {
+        this.publicationDate = publicationDate;
     }
 }

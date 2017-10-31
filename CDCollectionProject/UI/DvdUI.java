@@ -32,6 +32,9 @@ public class DvdUI
                     deleteDvd();
                     break;
                 case 3:
+                    listDvds();
+                    break;
+                case 4:
                     System.out.println("go back");
                     finished = true;
                     break;
@@ -48,8 +51,9 @@ public class DvdUI
         System.out.println("-----------------");
         System.out.println("1 - Add DVD");
         System.out.println("2 - Delete DVD");
-        System.out.println("3 - Back");
-        System.out.println("      Enter a number(1-3)");
+        System.out.println("3 - List DVDs");
+        System.out.println("4 - Back");
+        System.out.println("      Enter a number(1-4)");
     }
     
     private void addNewDvd()
@@ -78,5 +82,10 @@ public class DvdUI
         System.out.println("\nType the name of the DVD you want to delete");
         tempName = reader.next();
         dvdCtr.deleteDVD(tempName);
+    }
+    
+    private void listDvds()
+    {
+        dvdCtr.listDVDs();
     }
 }

@@ -21,4 +21,12 @@ public class DvdContainer
     {
         //use itarator
     }
+    
+    public void listDVDs()
+    {
+       System.out.println();
+       for (Dvd item : dvds) {
+                System.out.println(item.getTitle());
+            }
+    }
 }

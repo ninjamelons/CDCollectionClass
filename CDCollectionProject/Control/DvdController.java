@@ -21,5 +21,8 @@ public class DvdController
         dvdContainer.deleteDVD(name);
     }   
     
-
+    public void listDVDs()
+    {
+        dvdContainer.listDVDs();
+    }
 }

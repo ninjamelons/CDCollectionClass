@@ -1,35 +1,59 @@
 package UI;
-import UI.PersonUI;
 
-/**
- * Write a description of class MainMenuUI here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
+import java.util.Scanner;
+
 public class MainMenuUI
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class MainMenuUI
-     */
+    private String input;
+    private Scanner reader;
+    private PersonUI pUI;
+    private DvdUI dvdUI;
+    
     public MainMenuUI()
     {
-        // initialise instance variables
-        x = 0;
+        reader = new Scanner(System.in);
+        pUI = new PersonUI();
+        dvdUI = new DvdUI();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public void start()
     {
-        // put your code here
-        return x + y;
+        boolean finished = false;
+        
+        while(!finished) {
+            
+            printMenu();            
+            input = reader.nextLine().toLowerCase();            
+            switch(input)
+            {
+                case "1":
+                    System.out.println("u choosed Friends");
+                    break;
+                case "2":
+                    System.out.println("u choosed DVDs");
+                    break;
+                case "3":
+                    System.out.println("u choosed Loan");
+                    break;
+                case "4":
+                    System.out.println("u choosed Close");
+                    finished =true;
+                    break;
+                default:
+                    System.out.println("u fuked up, try again");
+                    break;
+            }  
+        }
+    }
+    
+    private void printMenu()
+    {
+        System.out.println("        Main Menu");
+        System.out.println("---------------------------");
+        System.out.println("1 -     Friends");
+        System.out.println("2 -     DVDs");
+        System.out.println("3 -     Loan");
+        System.out.println("4 -     Close");
+        System.out.println("          Make your choice");
     }
 }

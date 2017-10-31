@@ -8,8 +8,7 @@ public class Dvd
     int publicationDate;
     
     public Dvd()
-    {
-        
+    {        
     }
     
     public Dvd(long barcode, String title, String artist, int publicationDate)
@@ -58,5 +57,13 @@ public class Dvd
     public void setPublicationDate(int publicationDate)
     {
         this.publicationDate = publicationDate;
+    }
+    
+    public void printDVD()
+    {
+        System.out.println("\nBarcode: " + barcode);
+        System.out.println("Title: " + title);
+        System.out.println("Artist: " + artist);
+        System.out.println("Publication date: " + publicationDate);
     }
 }

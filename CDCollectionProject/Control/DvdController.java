@@ -1,25 +1,25 @@
 package Control;
 
-import Model.Dvd;
-import java.util.ArrayList;
+import Model.DvdContainer;
 
 public class DvdController
-{
-    ArrayList<Dvd> dvds;
+{    
+    DvdContainer dvdContainer;
     
     public DvdController()
     {
-        dvds = new ArrayList<Dvd>();
+        dvdContainer = new DvdContainer();
     }
     
     public void addDVD()
     {
-        
+       
     }
     
     public void deleteDVD()
     {
         
-    }
+    }   
+    
 
 }

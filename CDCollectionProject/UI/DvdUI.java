@@ -29,7 +29,7 @@ public class DvdUI
                     addNewDvd();
                     break;
                 case 2:
-                    System.out.println("u choosed Delete DVD");
+                    deleteDvd();
                     break;
                 case 3:
                     System.out.println("go back");
@@ -69,5 +69,14 @@ public class DvdUI
         tempPublicationDate = reader.nextInt();
         dvdCtr.addDVD(tempBarcode,tempTitle,tempArtist,tempPublicationDate);
         System.out.println("You successfully added a new DVD");
+    }
+    
+    private void deleteDvd()
+    {
+        String tempName;
+        
+        System.out.println("\nType the name of the DVD you want to delete");
+        tempName = reader.next();
+        dvdCtr.deleteDVD(tempName);
     }
 }

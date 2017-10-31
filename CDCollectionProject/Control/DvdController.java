@@ -16,9 +16,9 @@ public class DvdController
        dvdContainer.addDVD(tempBarcode,tempTitle,tempArtist,tempPublicationDate);
     }
     
-    public void deleteDVD()
+    public void deleteDVD(String name)
     {
-        
+        dvdContainer.deleteDVD(name);
     }   
     
 

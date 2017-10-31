@@ -17,8 +17,8 @@ public class DvdContainer
        dvds.add(new Dvd(tempBarcode,tempTitle,tempArtist,tempPublicationDate));
     }
     
-    public void deleteDVD()
+    public void deleteDVD(String name)
     {
-        
+        //use itarator
     }
 }

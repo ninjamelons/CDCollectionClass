@@ -1,5 +1,6 @@
 package Model;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class PersonContainer
 {
@@ -10,14 +11,30 @@ public class PersonContainer
         friends = new HashSet<>();
     }
     
-    public void addPerson(Person person)
+    public void addPerson(String name, String address, String city, String postalCode, String phoneNo)
     {
-        if(person != null)
+        if(name != null)
         {
-            friends.add(person);
+            friends.add(new Person(name,address,city,postalCode,phoneNo));
         }
         else
-            System.out.println("Error 404: Person not found");
+            System.out.println("Error 404: Failed to add person");
+    }
+    
+    public boolean deletePerson(String name)
+    {
+        Iterator<Person> personIt = friends.iterator();
+        boolean result = false;
+        while(personIt.hasNext())
+        {
+            Person nextP = personIt.next();
+            if(nextP.getName().equals(name))
+            {
+                personIt.remove();
+                result = true;
+            }
+        }
+        return result;
     }
     
     public Person getPerson(String name)
@@ -25,7 +42,7 @@ public class PersonContainer
         Person result = null;
         for(Person person : friends)
         {
-            if(person.getFriendName().equals(name))
+            if(person.getName().equals(name))
             {
                 result = person;
             }

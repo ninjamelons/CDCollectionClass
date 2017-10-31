@@ -2,8 +2,10 @@
 comment0.target=PersonContainer
 comment1.params=
 comment1.target=PersonContainer()
-comment2.params=person
-comment2.target=void\ addPerson(Person)
+comment2.params=name\ address\ city\ postalCode\ phoneNo
+comment2.target=void\ addPerson(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment3.params=name
-comment3.target=Person\ getPerson(java.lang.String)
-numComments=4
+comment3.target=boolean\ deletePerson(java.lang.String)
+comment4.params=name
+comment4.target=Person\ getPerson(java.lang.String)
+numComments=5

@@ -1,6 +1,5 @@
 package UI;
 
-
 /**
  * Write a description of class PersonUI here.
  *
@@ -9,27 +8,72 @@ package UI;
  */
 public class PersonUI
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class PersonUI
-     */
     public PersonUI()
     {
-        // initialise instance variables
-        x = 0;
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    private void go()
     {
-        // put your code here
-        return x + y;
+        boolean finished = false;
+        while(!finished)
+        {
+            printStudentMenu(); 
+            int choice = getUserInput();
+            switch(choice)
+            {
+                case 1:
+                    printNewFriendMenu();
+                    addNewFriend();
+                    break;
+                case 2:
+                    printDeleteFriendMenu();
+                    deleteFriend();
+                    break;
+                case 3:
+                    printFriendStatusMenu();
+                    checkFriendStatus();
+                    break;
+                case 4:
+                    finished = true;
+                default:
+                    finished = true;
+                    break;            
+            }
+        }
+    }
+    
+    private void printStudentMenu()
+    {
+    }
+    
+    private int getUserInput()
+    {
+        return 0;
+    }
+    
+    private void printNewFriendMenu()
+    {
+    }
+    
+    private void addNewFriend()
+    {
+    }
+    
+    private void printDeleteFriendMenu()
+    {
+    }
+    
+    private void deleteFriend()
+    {
+    }
+    
+    private void printFriendStatusMenu()
+    {
+    }
+    
+    private void checkFriendStatus()
+    {
     }
 }

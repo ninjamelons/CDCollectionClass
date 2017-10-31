@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>13</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>440</x>
-      <y>10</y>
-      <w>140</w>
-      <h>110</h>
+      <x>910</x>
+      <y>572</y>
+      <w>182</w>
+      <h>143</h>
     </coordinates>
-    <panel_attributes>DVD
+    <panel_attributes>Dvd
 --
 barcode
 title
 artist
-publicationDate
-
-</panel_attributes>
+publicationDate</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>270</y>
-      <w>120</w>
-      <h>110</h>
+      <x>377</x>
+      <y>572</y>
+      <w>156</w>
+      <h>169</h>
     </coordinates>
     <panel_attributes>Person
 --
@@ -34,30 +32,31 @@ address
 postalCode
 city
 phone
+loan
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>110</y>
-      <w>70</w>
-      <h>180</h>
+      <x>780</x>
+      <y>624</y>
+      <w>156</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
 m2=0..*
 Has &gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>270</y>
-      <w>130</w>
-      <h>110</h>
+      <x>624</x>
+      <y>572</y>
+      <w>169</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>Copy
 --
@@ -70,10 +69,10 @@ purchasePrice
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>220</x>
-      <y>270</y>
-      <w>130</w>
-      <h>110</h>
+      <x>624</x>
+      <y>338</y>
+      <w>169</w>
+      <h>143</h>
     </coordinates>
     <panel_attributes>Loan
 --
@@ -86,23 +85,209 @@ state
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>340</x>
-      <y>320</y>
-      <w>130</w>
-      <h>30</h>
+      <x>689</x>
+      <y>468</y>
+      <w>39</w>
+      <h>130</h>
     </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>377</x>
+      <y>338</y>
+      <w>156</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>PersonController
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>377</x>
+      <y>104</y>
+      <w>156</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>PersonUI
+--
+
+</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>130</x>
-      <y>320</y>
-      <w>110</w>
-      <h>30</h>
+      <x>442</x>
+      <y>234</y>
+      <w>39</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>442</x>
+      <y>468</y>
+      <w>39</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>403</y>
+      <w>130</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>338</y>
+      <w>182</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>DvdController
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>104</y>
+      <w>182</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>DvdUI
+--
+ </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>988</x>
+      <y>468</y>
+      <w>39</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>988</x>
+      <y>234</y>
+      <w>39</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>572</y>
+      <w>156</w>
+      <h>169</h>
+    </coordinates>
+    <panel_attributes>PersonContainer
+--
+friends</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1209</x>
+      <y>572</y>
+      <w>182</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>DvdContainer
+--
+dvds</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>273</x>
+      <y>650</y>
+      <w>130</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1079</x>
+      <y>624</y>
+      <w>156</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..*
+Has &gt;</panel_attributes>
+    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>637</x>
+      <y>104</y>
+      <w>182</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>MainMenuUI
+--
+personUI
+dvdUI</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>169</y>
+      <w>143</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>806</x>
+      <y>169</y>
+      <w>130</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

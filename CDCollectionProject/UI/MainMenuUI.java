@@ -1,10 +1,8 @@
 package UI;
-
 import java.util.Scanner;
 
 public class MainMenuUI
 {
-    private String input;
     private Scanner reader;
     private PersonUI pUI;
     private DvdUI dvdUI;
@@ -21,23 +19,22 @@ public class MainMenuUI
         boolean finished = false;
         
         while(!finished) {
-            
-            printMenu();            
-            input = reader.nextLine().toLowerCase();            
+            printMainMenu();            
+            int input = reader.nextInt();
             switch(input)
             {
-                case "1":
+                case 1:
                     System.out.println("u choosed Friends");
                     break;
-                case "2":
+                case 2:
                     System.out.println("u choosed DVDs");
                     break;
-                case "3":
+                case 3:
                     System.out.println("u choosed Loan");
                     break;
-                case "4":
+                case 4:
                     System.out.println("u choosed Close");
-                    finished =true;
+                    finished = true;
                     break;
                 default:
                     System.out.println("u fuked up, try again");
@@ -46,14 +43,14 @@ public class MainMenuUI
         }
     }
     
-    private void printMenu()
+    private void printMainMenu()
     {
-        System.out.println("        Main Menu");
+        System.out.println("        Main Menu          ");
         System.out.println("---------------------------");
-        System.out.println("1 -     Friends");
-        System.out.println("2 -     DVDs");
-        System.out.println("3 -     Loan");
-        System.out.println("4 -     Close");
-        System.out.println("          Make your choice");
+        System.out.println("1 -   Friends             ");
+        System.out.println("2 -   DVDs                ");
+        System.out.println("3 -   Loan                ");
+        System.out.println("4 -   Exit               ");
+        System.out.println("        Enter a number(1-4)");
     }
 }

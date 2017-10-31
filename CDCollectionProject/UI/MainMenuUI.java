@@ -24,7 +24,7 @@ public class MainMenuUI
             switch(input)
             {
                 case 1:
-                    System.out.println("u choosed Friends");
+                    pUI.go();
                     break;
                 case 2:
                     dvdUI.start();

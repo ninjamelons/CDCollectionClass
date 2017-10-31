@@ -83,7 +83,7 @@ public class PersonUI
             String postalCode = getUserInput();
             System.out.println("   Enter Phone Number      ");
             String phoneNo = getUserInput();
-            personController.addNewFriend(name,address,city,postalCode,phoneNo);
+//            personController.addNewFriend(name,address,city,postalCode,phoneNo);
             printFriendDetails(name,address,city,postalCode,phoneNo);
         }
     }
@@ -94,15 +94,15 @@ public class PersonUI
         System.out.println("---------------------------");
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
-        personController.deleteFriend(name);
+//        personController.deleteFriend(name);
     }
 
     private void checkFriendStatus()
     {
-        Object person = personController.getFriend();
-        printFriendDetails(person.getName(),person.getAddress(),person.getCity(),
-                           person.getPostalCode(),person.getPhoneNo());
-        person.getCurrentLoan();
+ //       Object person = personController.getFriend();
+//        printFriendDetails(person.getName(),person.getAddress(),person.getCity(),
+ //                          person.getPostalCode(),person.getPhoneNo());
+ //       person.getCurrentLoan();
     }
 
     private void printFriendDetails(String name, String address, String city,

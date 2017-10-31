@@ -16,4 +16,9 @@ public class DvdContainer
     {
        dvds.add(new Dvd(tempBarcode,tempTitle,tempArtist,tempPublicationDate));
     }
+    
+    public void deleteDVD()
+    {
+        
+    }
 }

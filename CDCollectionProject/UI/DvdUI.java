@@ -26,7 +26,6 @@ public class DvdUI
             switch(input)
             {
                 case 1:
-                    System.out.println("u choosed Add DVD");
                     addNewDvd();
                     break;
                 case 2:
@@ -50,7 +49,7 @@ public class DvdUI
         System.out.println("1 - Add DVD");
         System.out.println("2 - Delete DVD");
         System.out.println("3 - Back");
-        System.out.println("      Make your choice");
+        System.out.println("      Enter a number(1-3)");
     }
     
     private void addNewDvd()
@@ -59,7 +58,7 @@ public class DvdUI
         String tempArtist, tempTitle;
         int tempPublicationDate;
         
-        System.out.println("Plese type in the following details");
+        System.out.println("\nPlese type in the following details ");
         System.out.print("Barcode: ");
         tempBarcode = reader.nextLong();
         System.out.print("Title: ");
@@ -69,5 +68,6 @@ public class DvdUI
         System.out.print("PublicationDate: ");
         tempPublicationDate = reader.nextInt();
         dvdCtr.addDVD(tempBarcode,tempTitle,tempArtist,tempPublicationDate);
+        System.out.println("You successfully added a new DVD");
     }
 }

@@ -171,7 +171,7 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>910</x>
+      <x>949</x>
       <y>104</y>
       <w>182</w>
       <h>143</h>
@@ -197,11 +197,11 @@ m2=1</panel_attributes>
     <coordinates>
       <x>988</x>
       <y>234</y>
-      <w>39</w>
+      <w>78</w>
       <h>130</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;40.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -284,10 +284,10 @@ dvdUI</panel_attributes>
     <coordinates>
       <x>806</x>
       <y>169</y>
-      <w>130</w>
+      <w>169</w>
       <h>39</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

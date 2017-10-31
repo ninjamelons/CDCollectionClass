@@ -27,7 +27,7 @@ public class MainMenuUI
                     System.out.println("u choosed Friends");
                     break;
                 case 2:
-                    System.out.println("u choosed DVDs");
+                    dvdUI.start();
                     break;
                 case 3:
                     System.out.println("u choosed Loan");
@@ -45,7 +45,7 @@ public class MainMenuUI
     
     private void printMainMenu()
     {
-        System.out.println("        Main Menu          ");
+        System.out.println("\n        Main Menu          ");
         System.out.println("---------------------------");
         System.out.println("1 -   Friends             ");
         System.out.println("2 -   DVDs                ");

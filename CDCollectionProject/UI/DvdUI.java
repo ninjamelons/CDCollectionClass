@@ -32,6 +32,10 @@ public class DvdUI
                 case 2:
                     System.out.println("u choosed Delete DVD");
                     break;
+                case 3:
+                    System.out.println("go back");
+                    finished = true;
+                    break;
                 default:
                     System.out.println("u fuked up, try again");
                     break;
@@ -41,11 +45,12 @@ public class DvdUI
     
     private void printMenu()
     {
-        System.out.println("        DVD UI");
-        System.out.println("---------------------------");
-        System.out.println("1 -     Add DVD");
-        System.out.println("2 -     Delete DVD");
-        System.out.println("          Make your choice");
+        System.out.println("\n    DVD UI");
+        System.out.println("-----------------");
+        System.out.println("1 - Add DVD");
+        System.out.println("2 - Delete DVD");
+        System.out.println("3 - Back");
+        System.out.println("      Make your choice");
     }
     
     private void addNewDvd()
@@ -57,10 +62,10 @@ public class DvdUI
         System.out.println("Plese type in the following details");
         System.out.print("Barcode: ");
         tempBarcode = reader.nextLong();
-        System.out.print("\nTitle: ");
-        tempTitle = reader.nextLine();
-        System.out.print("\nArtist: ");
-        tempArtist = reader.nextLine();
+        System.out.print("Title: ");
+        tempTitle = reader.next();
+        System.out.print("Artist: ");
+        tempArtist = reader.next();
         System.out.print("PublicationDate: ");
         tempPublicationDate = reader.nextInt();
         dvdCtr.addDVD(tempBarcode,tempTitle,tempArtist,tempPublicationDate);

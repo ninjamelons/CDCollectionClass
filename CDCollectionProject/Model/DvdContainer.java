@@ -11,4 +11,9 @@ public class DvdContainer
     {
         dvds = new ArrayList<Dvd>();
     }
+    
+    public void addDVD(long tempBarcode,String tempTitle ,String tempArtist,int tempPublicationDate)
+    {
+       dvds.add(new Dvd(tempBarcode,tempTitle,tempArtist,tempPublicationDate));
+    }
 }

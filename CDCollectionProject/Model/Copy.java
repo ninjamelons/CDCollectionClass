@@ -1,35 +1,54 @@
 package Model;
+import java.util.*;
 
-
-/**
- * Write a description of class Copy here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Copy
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private String serialNumber;
+    private Date purchaseDate = new Date();
+    private double purchasePrice;
 
     /**
      * Constructor for objects of class Copy
      */
     public Copy()
+    {               
+    }   
+    
+    public Copy(Date purchaseDate, String serialNumber, double purchasePrice)
     {
-        // initialise instance variables
-        x = 0;
+        this.purchaseDate = purchaseDate;
+        this.serialNumber = serialNumber;
+        this.purchasePrice = purchasePrice;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    
+    public Date getPurchaseDate()
     {
-        // put your code here
-        return x + y;
+        return purchaseDate;
+    }
+    
+    public void setPurchaseDate()
+    {
+        this.purchaseDate = purchaseDate;
+    }
+    
+    public String getSerialNumber()
+    {
+        return serialNumber;
+    }
+    
+    public void setSerialNumber(String serialNumber)
+    {
+        this.serialNumber = serialNumber;
+    }  
+    
+    public double getPurchasePrice()
+    {
+        return purchasePrice;
+    }
+    
+    public void setPurchasePrice(double purchasePrice)
+    {
+        this.purchasePrice = purchasePrice;
     }
 }

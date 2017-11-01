@@ -63,7 +63,7 @@ public class LoanUI
         System.out.println("        Enter a number(1-4)");
     }
 
-    private void addNewPerson()
+    private void addNewLoan()
     {
         System.out.println("       New Loan Menu       ");
         System.out.println("---------------------------");
@@ -71,12 +71,12 @@ public class LoanUI
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
         System.out.println("   Enter DVD name          ");
-        String dvd = getUserInput();
+        String dvdCopy = getUserInput();
         System.out.println("   Enter Price             ");
         String price = getUserInput();
         
-        loanController.addLoan(name,dvd,price);
-        printLoanDetails(name,dvd,price);
+        loanController.addLoan(name,dvdCopy,price);
+        printLoanDetails(name,dvdCopy,price);
     }
 
     private void returnLoan()
@@ -85,7 +85,11 @@ public class LoanUI
         System.out.println("---------------------------");
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
-        if(loanController.returnLoan(name,dvd,)) {
+        System.out.println("   Enter DVD name          ");
+        String dvdCopy = getUserInput();
+        System.out.println("   Enter Price             ");
+        String price = getUserInput();
+        if(loanController.returnLoan(name,dvdCopy,price)) {
             System.out.println("     " + name + " has been successfully deleted");
         }
         else
@@ -95,24 +99,21 @@ public class LoanUI
         }
     }
 
-    private void checkCurrentLoans()
+    private void checkCurrentLoan()
     {
-        System.out.println("    Friend Details Menu    ");
+        System.out.println("    Loan Details Menu    ");
         System.out.println("---------------------------");
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
         
-        personController.getPersonDetails(name);
+        loanController.getLoanDetails(name);
     }
 
-    private void printPersonDetails(String name, String address, String city,
-                                    String postalCode, String phoneNo)
+    private void printLoanDetails(String name, String dvdCopy, String price)
     {
         System.out.println("      Friend Details       ");
         System.out.println("   Name: " + name );
-        System.out.println("   Address: " + address );
-        System.out.println("   City: " + city );
-        System.out.println("   Postal Code: " + postalCode );
-        System.out.println("   Phone Number: " + phoneNo );
+        System.out.println("   DVD Name: " + dvdCopy );
+        System.out.println("   Price: " + price );
     }
 }

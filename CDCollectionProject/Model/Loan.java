@@ -6,11 +6,7 @@ public class Loan
 {    
     private Date borrowerDate = new Date();
     private int period;
-    private boolean state;    
-    
-    public Loan()
-    {
-    }
+    private boolean state;
     
     public Loan(Date borrowerDate, int period, boolean state)
     {

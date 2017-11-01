@@ -1,293 +1,447 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>13</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>910</x>
-      <y>572</y>
-      <w>182</w>
-      <h>143</h>
+      <x>1056</x>
+      <y>776</y>
+      <w>224</w>
+      <h>208</h>
     </coordinates>
-    <panel_attributes>Dvd
+    <panel_attributes>Model:::Dvd
 --
-barcode
-title
-artist
-publicationDate</panel_attributes>
+-barcode : long
+-title : String
+-artist : String
+-publicationDate : int
+-copyList : HashSet
+--
++getBarcode() : long
++setBarcode(barcode) : void
++getTitle() : String
++setTitle(title) : void
++getArtist() : String
++setArtist(artist) : void
++getPublicationDate() : int
++setPublicationDate(publicationDate) : void
++printDVD() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>377</x>
-      <y>572</y>
-      <w>156</w>
-      <h>169</h>
+      <x>368</x>
+      <y>776</y>
+      <w>136</w>
+      <h>192</h>
     </coordinates>
-    <panel_attributes>Person
+    <panel_attributes>Model::Person
 --
-name
-address
-postalCode
-city
-phone
-loan
-</panel_attributes>
+-name : String
+-address : String
+-postalCode : String
+-city : String
+-phone : String
+-loan : Loan
+--
++getName() : String
++getAddress() : String
++getCity() : String
++getPostalCode() : String
++getPhoneNo() : String
++getLoan() : Loan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
+      <x>704</x>
+      <y>816</y>
+      <w>224</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::Copy
+--
+-serialNumber : long
+-purchaseDate : Date
+-purchasePrice : double
+--
++getSerialNumber() : long
++setSerialNumber(serialNumber) : void
++getPurchaseDate() : Date
++setPurchaseDate(purchaseDate) : void
++getPurchasePrice() : double
++setPurchasePrice(purchasePrice) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>608</y>
+      <w>216</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Model::Loan
+--
+-borrowerDate : Date
+-period : int
+-state : boolean
+--
++getBorrowerDate() : Date
++setBorrowerDate(borrowerDate) : void
++getPeriod() : int
++setPeriod(period) : void
++getState() : boolean
++setState(state) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>384</y>
+      <w>312</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Control::PersonController
+--
+-personContainer : PersonContainer
+--
++addPerson(name,address,city,postalCode,phoneNo) : void
++deletePerson(phoneNo) : boolean
++getPerson(phoneNo) : Person
++getPersonDetails(phoneNo) : void
++getCurrentLoan(name) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>472</x>
+      <y>168</y>
+      <w>200</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>UI::PersonUI
+--
+-personController : PersonController
+--
++go() : void
+-getUserInput() : String
+-printPersonMenu() : void
+-addNewPerson() : void
+-deletePerson() : void
+-checkPersonStatus() : void
+-printPersonDetails() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>384</y>
+      <w>384</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Control::DvdController
+--
+-dvdContainer : DvdContainer
+--
++addDVD(tempBarcode,tempTitle,tempArtist,tempPublicationDate) : void
++deleteDVD(name) : void
++listDVDs() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>168</y>
+      <w>160</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>UI::DvdUI
+--
+-dvdController : DvdController
+-input : int
+-reader : Scanner
+--
++start() : void
+-printMenu() : void
+-addNewDvd() : void
+-deleteDvd() : void
+-listDvds() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
       <y>624</y>
-      <w>156</w>
-      <h>65</h>
+      <w>312</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m1=1
-m2=0..*
-Has &gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>624</x>
-      <y>572</y>
-      <w>169</w>
-      <h>143</h>
-    </coordinates>
-    <panel_attributes>Copy
+    <panel_attributes>Model::PersonContainer
 --
-serialNumber
-purchaseDate
-purchasePrice
-</panel_attributes>
+-friends : HashSet&lt;Person&gt;
++instance : PersonContainer
+--
++getInstance() : PersonContainer
++addPerson(name,address,city,postalCode,phoneNo) : void
++deletePerson(name) : boolean
++getPerson(name) : Person</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>624</x>
-      <y>338</y>
-      <w>169</w>
-      <h>143</h>
+      <x>960</x>
+      <y>624</y>
+      <w>376</w>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>Loan
+    <panel_attributes>Model::DvdContainer
 --
-borrowerDate
-period
-state
-</panel_attributes>
+-dvd : HashSet&lt;Dvd&gt;
+--
++addDVD(tempBarcode,tempTitle,tempArtist,tempPublicationDate) : void
++deleteDVD(name) : void
++listDVDs() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>0</y>
+      <w>128</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>UI::MainMenuUI
+--
+-reader : Scanner
+-personUI : PersonUI
+-dvdUI : DvdUI
+-loanUI : LoanUI
+--
++start() : void
+-printMainMenu() : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>160</y>
+      <w>184</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>UI::LoanUI
+--
++loanController : LoanController
+--
++go() : void
+-getUserInput() : String
+-printLoanMenu() : void
+-addNewLoan() : void
+-returnLoan() : void
+-getCurrentLoan(phoneNo) : void
+-printLoanDetails() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>689</x>
-      <y>468</y>
-      <w>39</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=-
-m1=1
-m2=1</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>377</x>
-      <y>338</y>
-      <w>156</w>
-      <h>143</h>
-    </coordinates>
-    <panel_attributes>PersonController
---
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>377</x>
+      <x>800</x>
       <y>104</y>
-      <w>156</w>
-      <h>143</h>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>PersonUI
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>40</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>230.0;160.0;230.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>40</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;160.0;10.0;10.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>424</x>
+      <y>216</y>
+      <w>64</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;210.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1112</x>
+      <y>232</y>
+      <w>72</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>70.0;190.0;70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>440</y>
+      <w>112</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>704</x>
+      <y>384</y>
+      <w>216</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Control::LoanController
 --
 
-</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>442</x>
-      <y>234</y>
-      <w>39</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>442</x>
-      <y>468</y>
-      <w>39</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>520</x>
-      <y>403</y>
-      <w>130</w>
-      <h>39</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>910</x>
-      <y>338</y>
-      <w>182</w>
-      <h>143</h>
-    </coordinates>
-    <panel_attributes>DvdController
 --
-</panel_attributes>
++addNewLoan() : void
++returnLoan() : void
++getCurrentLoan(phoneNo) : Loan</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>UMLNote</id>
     <coordinates>
-      <x>949</x>
-      <y>104</y>
-      <w>182</w>
-      <h>143</h>
+      <x>104</x>
+      <y>112</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
-    <panel_attributes>DvdUI
---
- </panel_attributes>
+    <panel_attributes>UI Layer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLNote</id>
     <coordinates>
-      <x>988</x>
-      <y>468</y>
-      <w>39</w>
-      <h>130</h>
+      <x>104</x>
+      <y>416</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>988</x>
-      <y>234</y>
-      <w>78</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;80.0;40.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>130</x>
-      <y>572</y>
-      <w>156</w>
-      <h>169</h>
-    </coordinates>
-    <panel_attributes>PersonContainer
---
-friends</panel_attributes>
+    <panel_attributes>Control Layer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLClass</id>
+    <id>UMLNote</id>
     <coordinates>
-      <x>1209</x>
-      <y>572</y>
-      <w>182</w>
-      <h>143</h>
+      <x>104</x>
+      <y>688</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
-    <panel_attributes>DvdContainer
---
-dvds</panel_attributes>
+    <panel_attributes>Model Layer</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>273</x>
-      <y>650</y>
-      <w>130</w>
-      <h>39</h>
+      <x>424</x>
+      <y>488</y>
+      <w>24</w>
+      <h>152</h>
     </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1079</x>
-      <y>624</y>
-      <w>156</w>
-      <h>65</h>
+      <x>1160</x>
+      <y>472</y>
+      <w>24</w>
+      <h>168</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
-m1=1
-m2=0..*
-Has &gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>637</x>
-      <y>104</y>
-      <w>182</w>
-      <h>143</h>
-    </coordinates>
-    <panel_attributes>MainMenuUI
---
-personUI
-dvdUI</panel_attributes>
-    <additional_attributes/>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>169</y>
-      <w>143</w>
-      <h>39</h>
+      <x>800</x>
+      <y>528</y>
+      <w>24</w>
+      <h>96</h>
     </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>806</x>
-      <y>169</y>
-      <w>169</w>
-      <h>39</h>
+      <x>1160</x>
+      <y>720</y>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>424</x>
+      <y>720</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>920</x>
+      <y>880</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>800</x>
+      <y>296</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

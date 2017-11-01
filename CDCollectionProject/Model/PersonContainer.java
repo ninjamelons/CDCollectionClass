@@ -4,11 +4,21 @@ import java.util.Iterator;
 
 public class PersonContainer
 {
+    public static PersonContainer instance = null;
     private HashSet<Person> friends;
     
-    public PersonContainer()
+    private PersonContainer()
     {
         friends = new HashSet<>();
+    }
+    
+    public static PersonContainer getInstance()
+    {
+        if(instance == null)
+        {
+            instance = new PersonContainer();
+        }
+        return instance;
     }
     
     public void addPerson(String name, String address, String city, String postalCode, String phoneNo)

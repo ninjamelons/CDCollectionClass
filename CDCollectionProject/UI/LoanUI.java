@@ -1,6 +1,6 @@
 package UI;
 import java.util.Scanner;
-import Control.PersonController;
+import Control.LoanController;
 
 /**
  * Write a description of class PersonUI here.
@@ -8,13 +8,13 @@ import Control.PersonController;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class PersonUI
+public class LoanUI
 {
-    private PersonController personController;
+    private LoanController loanController;
 
-    public PersonUI()
+    public LoanUI()
     {
-        personController = new PersonController();
+        loanController = new LoanController();
     }
 
     public void go()
@@ -22,24 +22,25 @@ public class PersonUI
         boolean finished = false;
         while(!finished)
         {
-            printPersonMenu();
+            printLoanMenu();
             String choice = getUserInput();
             switch(choice)
             {
                 case "1":
-                addNewPerson();
-                break;
+                    addNewLoan();
+                    break;
                 case "2":
-                deletePerson();
-                break;
+                    returnLoan();
+                    break;
                 case "3":
-                checkPersonStatus();
-                break;
+                    checkCurrentLoan();
+                    break;
                 case "4":
-                finished = true;
+                    finished = true;
+                    break;
                 default:
-                finished = true;
-                break;            
+                    finished = true;
+                    break;            
             }
         }
     }
@@ -51,43 +52,40 @@ public class PersonUI
         return userInput;
     }
 
-    private void printPersonMenu()
+    private void printLoanMenu()
     {
-        System.out.println("        Friend Menu        ");
+        System.out.println("         Loan Menu         ");
         System.out.println("---------------------------");
-        System.out.println("1 -   Add New Friend       ");
-        System.out.println("2 -   Delete Friend        ");
-        System.out.println("3 -   Check Friend         ");
+        System.out.println("1 -   Add New Loan         ");
+        System.out.println("2 -   Return Loan          ");
+        System.out.println("3 -   Check Current Loans  ");
         System.out.println("4 -   Return to Main Menu  ");
         System.out.println("        Enter a number(1-4)");
     }
 
     private void addNewPerson()
     {
-        System.out.println("      New Friend Menu      ");
+        System.out.println("       New Loan Menu       ");
         System.out.println("---------------------------");
 
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
-        System.out.println("   Enter Address           ");
-        String address = getUserInput();
-        System.out.println("   Enter City name         ");
-        String city = getUserInput();
-        System.out.println("   Enter postal Code       ");
-        String postalCode = getUserInput();
-        System.out.println("   Enter Phone Number      ");
-        String phoneNo = getUserInput();
-        personController.addPerson(name,address,city,postalCode,phoneNo);
-        printPersonDetails(name,address,city,postalCode,phoneNo);
+        System.out.println("   Enter DVD name          ");
+        String dvd = getUserInput();
+        System.out.println("   Enter Price             ");
+        String price = getUserInput();
+        
+        loanController.addLoan(name,dvd,price);
+        printLoanDetails(name,dvd,price);
     }
 
-    private void deletePerson()
+    private void returnLoan()
     {
-        System.out.println("     Delete Friend Menu    ");
+        System.out.println("      Return Loan Menu     ");
         System.out.println("---------------------------");
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
-        if(personController.deletePerson(name)) {
+        if(loanController.returnLoan(name,dvd,)) {
             System.out.println("     " + name + " has been successfully deleted");
         }
         else
@@ -97,7 +95,7 @@ public class PersonUI
         }
     }
 
-    private void checkPersonStatus()
+    private void checkCurrentLoans()
     {
         System.out.println("    Friend Details Menu    ");
         System.out.println("---------------------------");

@@ -6,12 +6,14 @@ public class MainMenuUI
     private Scanner reader;
     private PersonUI pUI;
     private DvdUI dvdUI;
+    private LoanUI loanUI;
     
     public MainMenuUI()
     {
         reader = new Scanner(System.in);
         pUI = new PersonUI();
         dvdUI = new DvdUI();
+        loanUI = new LoanUI();
     }
     
     public void start()
@@ -30,14 +32,13 @@ public class MainMenuUI
                     dvdUI.start();
                     break;
                 case 3:
-                    System.out.println("u choosed Loan");
+                    loanUI.go();
                     break;
                 case 4:
-                    System.out.println("u choosed Close");
                     finished = true;
                     break;
                 default:
-                    System.out.println("u fuked up, try again");
+                    System.out.println("Please enter a digit 1-4");
                     break;
             }  
         }

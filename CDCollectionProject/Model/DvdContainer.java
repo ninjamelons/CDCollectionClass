@@ -7,22 +7,21 @@ import java.util.HashSet;
 
 public class DvdContainer
 {
-    ArrayList<Dvd> dvds;
-    HashSet<Dvd> dvdHashSet;
+    HashSet<Dvd> dvd;
     
     public DvdContainer()
     {
-        dvds = new ArrayList<Dvd>();
+        dvd = new HashSet<Dvd>();
     }
     
     public void addDVD(long tempBarcode,String tempTitle ,String tempArtist,int tempPublicationDate)
     {
-       dvds.add(new Dvd(tempBarcode,tempTitle,tempArtist,tempPublicationDate));
+       dvd.add(new Dvd(tempBarcode,tempTitle,tempArtist,tempPublicationDate));
     }
     
     public void deleteDVD(String name)
     {
-        Iterator<Dvd> dvdIt = dvdHashSet.iterator();
+        Iterator<Dvd> dvdIt = dvd.iterator();
         while(dvdIt.hasNext())
         {
             Dvd nextD = dvdIt.next();
@@ -35,11 +34,11 @@ public class DvdContainer
                 System.out.println("\nSomething went wrong");
         }
     }
-        
+    
     public void listDVDs()
     {
        System.out.println();
-       for (Dvd item : dvds) {
+       for (Dvd item : dvd) {
                 System.out.println(item.getTitle());
             }
     }

@@ -77,10 +77,11 @@ public class DvdUI
     
     private void deleteDvd()
     {
-        String tempName;
+        String tempName = "";
         
         System.out.println("\nType the name of the DVD you want to delete");
-        tempName = reader.next();
+        tempName = reader.nextLine();
+        System.out.println("\nname: " + tempName);
         dvdCtr.deleteDVD(tempName);
     }
     

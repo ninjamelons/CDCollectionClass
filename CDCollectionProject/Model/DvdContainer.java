@@ -2,10 +2,13 @@ package Model;
 
 import Model.Dvd;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.HashSet;
 
 public class DvdContainer
 {
     ArrayList<Dvd> dvds;
+    HashSet<Dvd> dvdHashSet;
     
     public DvdContainer()
     {
@@ -19,9 +22,20 @@ public class DvdContainer
     
     public void deleteDVD(String name)
     {
-        //use itarator
+        Iterator<Dvd> dvdIt = dvdHashSet.iterator();
+        while(dvdIt.hasNext())
+        {
+            Dvd nextD = dvdIt.next();
+            if(nextD.getTitle().equals(name))
+            {
+                dvdIt.remove();
+                System.out.println("\nYou successfully deleted " + name);
+            }
+            else                
+                System.out.println("\nSomething went wrong");
+        }
     }
-    
+        
     public void listDVDs()
     {
        System.out.println();

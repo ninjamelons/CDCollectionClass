@@ -2,10 +2,10 @@ package Model;
 
 public class Dvd
 {
-    long barcode;
-    String title;
-    String artist;
-    int publicationDate;
+    private long barcode;
+    private String title;
+    private String artist;
+    private int publicationDate;
     
     public Dvd(long barcode, String title, String artist, int publicationDate)
     {

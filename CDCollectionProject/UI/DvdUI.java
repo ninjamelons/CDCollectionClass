@@ -5,9 +5,9 @@ import Control.DvdController;
 
 public class DvdUI
 {
-    DvdController dvdCtr;
-    int input;    
-    Scanner reader;
+    private DvdController dvdCtr;
+    private int input;    
+    private Scanner reader;
     
     public DvdUI()
     {

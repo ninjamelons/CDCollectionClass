@@ -4,22 +4,27 @@ import java.util.*;
 public class Copy
 {
     // instance variables - replace the example below with your own
-    private String serialNumber;
+    private static int staticSerialNumber = 0;
+    private static final double purchasePrice = 20;
+    private int serialNumber;
+    private String dvdName;
     private Date purchaseDate = new Date();
-    private double purchasePrice;
 
     /**
      * Constructor for objects of class Copy
      */
-    public Copy()
-    {               
-    }   
+    public Copy(String dvdName)
+    {
+        staticSerialNumber++;
+        this.serialNumber = staticSerialNumber;
+        this.dvdName = dvdName;
+    }
     
-    public Copy(Date purchaseDate, String serialNumber, double purchasePrice)
+    public Copy(Date purchaseDate, int serialNumber, String dvdName)
     {
         this.purchaseDate = purchaseDate;
         this.serialNumber = serialNumber;
-        this.purchasePrice = purchasePrice;
+        this.dvdName = dvdName;
     }
     
     public Date getPurchaseDate()
@@ -27,17 +32,22 @@ public class Copy
         return purchaseDate;
     }
     
+    public String getDvdName()
+    {
+        return dvdName;
+    }
+    
     public void setPurchaseDate()
     {
         this.purchaseDate = purchaseDate;
     }
     
-    public String getSerialNumber()
+    public int getSerialNumber()
     {
         return serialNumber;
     }
     
-    public void setSerialNumber(String serialNumber)
+    public void setSerialNumber(int serialNumber)
     {
         this.serialNumber = serialNumber;
     }  
@@ -45,10 +55,5 @@ public class Copy
     public double getPurchasePrice()
     {
         return purchasePrice;
-    }
-    
-    public void setPurchasePrice(double purchasePrice)
-    {
-        this.purchasePrice = purchasePrice;
     }
 }

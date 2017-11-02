@@ -5,14 +5,14 @@ import java.util.*;
 public class Loan
 {    
     private Date borrowerDate = new Date();
-    private int period;
-    private boolean state;
+    private Copy dvdCopy;
+    private String period;
     
-    public Loan(Date borrowerDate, int period, boolean state)
+    public Loan(Date borrowerDate, Copy dvdCopy, String period)
     {
         this.borrowerDate = borrowerDate;
         this.period = period;
-        this.state = state;
+        this.dvdCopy = dvdCopy;
     }
     
     public Date getBorrowerDate()
@@ -25,23 +25,28 @@ public class Loan
         this.borrowerDate = borrowerDate;
     }
     
-    public int getPeriod()
+    public Copy getDvdCopy()
+    {
+        return dvdCopy;
+    }
+    
+    public double getPrice()
+    {
+        return dvdCopy.getPurchasePrice();
+    }
+    
+    public void setDvdCopy(Copy dvdCopy)
+    {
+        this.dvdCopy = dvdCopy;
+    }
+    
+    public String getPeriod()
     {
         return period;
     }
     
-    public void setPeriod(int period)
+    public void setPeriod(String period)
     {
         this.period = period;
-    }
-    
-    public boolean getState()
-    {
-        return state;
-    }
-    
-    public void setState(boolean state)
-    {
-        this.state = state;
     }
 }

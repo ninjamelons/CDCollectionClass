@@ -44,9 +44,4 @@ public class PersonController
         System.out.println("   Postal Code: " + person.getPostalCode());
         System.out.println("   Phone Number: " + person.getPhoneNo());
     }
-    
-    public void getCurrentLoan(String phoneNo)
-    {
-        Person person = personContainer.getPerson(phoneNo);
-    }
 }

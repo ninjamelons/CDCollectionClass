@@ -1,6 +1,5 @@
 package Model;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 public class PersonContainer
 {
@@ -31,14 +30,14 @@ public class PersonContainer
             System.out.println("Error 404: Failed to add person");
     }
     
-    public boolean deletePerson(String name)
+    public boolean deletePerson(String phoneNo)
     {
         Iterator<Person> personIt = friends.iterator();
         boolean result = false;
         while(personIt.hasNext())
         {
             Person nextP = personIt.next();
-            if(nextP.getName().equals(name))
+            if(nextP.getPhoneNo().equals(phoneNo))
             {
                 personIt.remove();
                 result = true;
@@ -47,16 +46,42 @@ public class PersonContainer
         return result;
     }
     
-    public Person getPerson(String name)
+    public Person getPerson(String phoneNo)
     {
         Person result = null;
         for(Person person : friends)
         {
-            if(person.getName().equals(name))
+            if(person.getPhoneNo().equals(phoneNo))
             {
                 result = person;
             }
         }
         return result;
+    }
+    
+    public void addLoan(String phoneNo, Date borrowerDate, String dvdCopy, String period)
+    {
+        Person person = getPerson(phoneNo);
+        Copy newDvdCopy = new Copy(dvdCopy);
+        Loan loan = new Loan(borrowerDate,newDvdCopy,period);
+        person.setLoan(loan);
+    }
+    
+    public boolean returnLoan(String phoneNo)
+    {
+        boolean result = false;
+        Person person = getPerson(phoneNo);
+        person.setLoan(null);
+        if(person.getLoan() == null)
+        {
+            result = true;
+        }
+        return result;
+    }
+    
+    public Loan getLoanDetails(String phoneNo)
+    {
+        Person person = getPerson(phoneNo);
+        return person.getLoan();
     }
 }

@@ -1,5 +1,5 @@
 package UI;
-import java.util.Scanner;
+import java.util.*;
 import Control.LoanController;
 
 /**
@@ -65,6 +65,7 @@ public class LoanUI
 
     private void addNewLoan()
     {
+        Date borrowerDate = new Date();
         System.out.println("       New Loan Menu       ");
         System.out.println("---------------------------");
 
@@ -72,11 +73,11 @@ public class LoanUI
         String phoneNo = getUserInput();
         System.out.println("   Enter DVD name          ");
         String dvdCopy = getUserInput();
-        System.out.println("   Enter Price             ");
-        String price = getUserInput();
+        System.out.println("   Enter Period            ");
+        String period = getUserInput();
         
-        loanController.addLoan(phoneNo,dvdCopy,price);
-        printLoanDetails(phoneNo,dvdCopy,price);
+        loanController.addLoan(phoneNo,borrowerDate,dvdCopy,period);
+        loanController.getLoanDetails(phoneNo);
     }
 
     private void returnLoan()
@@ -85,11 +86,7 @@ public class LoanUI
         System.out.println("---------------------------");
         System.out.println("   Enter Phone Number      ");
         String phoneNo = getUserInput();
-        System.out.println("   Enter DVD name          ");
-        String dvdCopy = getUserInput();
-        System.out.println("   Enter Price             ");
-        String price = getUserInput();
-        if(loanController.returnLoan(phoneNo,dvdCopy,price)) {
+        if(loanController.returnLoan(phoneNo)) {
             System.out.println("     " + phoneNo + " has been successfully deleted");
         }
         else
@@ -101,7 +98,7 @@ public class LoanUI
 
     private void checkCurrentLoan()
     {
-        System.out.println("    Loan Details Menu    ");
+        System.out.println("     Loan Details Menu     ");
         System.out.println("---------------------------");
         System.out.println("   Enter Phone Number      ");
         String phoneNo = getUserInput();
@@ -111,7 +108,7 @@ public class LoanUI
 
     private void printLoanDetails(String phoneNo, String dvdCopy, String price)
     {
-        System.out.println("      Friend Details       ");
+        System.out.println("       Loan Details        ");
         System.out.println("   Phone Number: " + phoneNo );
         System.out.println("   DVD Name: " + dvdCopy );
         System.out.println("   Price: " + price );

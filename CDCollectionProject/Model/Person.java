@@ -54,7 +54,7 @@ public class Person
     
     public Loan getLoan()
     {
-        return null;
+        return loan;
     }
     
     public void setLoan(Loan loan)

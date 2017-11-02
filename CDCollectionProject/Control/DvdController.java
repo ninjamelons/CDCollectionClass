@@ -4,11 +4,11 @@ import Model.DvdContainer;
 
 public class DvdController
 {    
-    DvdContainer dvdContainer;
+    private DvdContainer dvdContainer;
     
     public DvdController()
     {
-        dvdContainer = new DvdContainer();
+        dvdContainer = dvdContainer.getInstance();
     }
     
     public void addDVD(long tempBarcode, String tempTitle , String tempArtist, int tempPublicationDate)

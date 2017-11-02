@@ -13,7 +13,7 @@ public class PersonController
     
     public PersonController()
     {
-        personContainer = new PersonContainer();
+        personContainer = personContainer.getInstance();
     }
     
     public void addPerson(String name, String address, String city, String postalCode, String phoneNo)
@@ -21,21 +21,21 @@ public class PersonController
         personContainer.addPerson(name,address,city,postalCode,phoneNo);
     }
     
-    public boolean deletePerson(String name)
+    public boolean deletePerson(String phoneNo)
     {
-        return personContainer.deletePerson(name);
+        return personContainer.deletePerson(phoneNo);
     }
     
-    public Person getPerson(String name)
+    public Person getPerson(String phoneNo)
     {
         Person result = null;
-        result = personContainer.getPerson(name);
+        result = personContainer.getPerson(phoneNo);
         return result;
     }
     
-    public void getPersonDetails(String name)
+    public void getPersonDetails(String phoneNo)
     {
-        Person person = personContainer.getPerson(name);
+        Person person = personContainer.getPerson(phoneNo);
         
         System.out.println("      Person Details       ");
         System.out.println("   Name: " + person.getName());
@@ -45,8 +45,8 @@ public class PersonController
         System.out.println("   Phone Number: " + person.getPhoneNo());
     }
     
-    public void getCurrentLoan(String name)
+    public void getCurrentLoan(String phoneNo)
     {
-        Person person = personContainer.getPerson(name);
+        Person person = personContainer.getPerson(phoneNo);
     }
 }

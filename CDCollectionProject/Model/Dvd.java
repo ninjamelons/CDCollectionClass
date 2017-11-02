@@ -7,10 +7,6 @@ public class Dvd
     String artist;
     int publicationDate;
     
-    public Dvd()
-    {        
-    }
-    
     public Dvd(long barcode, String title, String artist, int publicationDate)
     {
         this.barcode = barcode;

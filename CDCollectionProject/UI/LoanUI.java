@@ -58,7 +58,7 @@ public class LoanUI
         System.out.println("---------------------------");
         System.out.println("1 -   Add New Loan         ");
         System.out.println("2 -   Return Loan          ");
-        System.out.println("3 -   Check Current Loans  ");
+        System.out.println("3 -   Check Current Loan   ");
         System.out.println("4 -   Return to Main Menu  ");
         System.out.println("        Enter a number(1-4)");
     }
@@ -68,34 +68,34 @@ public class LoanUI
         System.out.println("       New Loan Menu       ");
         System.out.println("---------------------------");
 
-        System.out.println("   Enter First & Last name ");
-        String name = getUserInput();
+        System.out.println("   Enter Phone Number      ");
+        String phoneNo = getUserInput();
         System.out.println("   Enter DVD name          ");
         String dvdCopy = getUserInput();
         System.out.println("   Enter Price             ");
         String price = getUserInput();
         
-        loanController.addLoan(name,dvdCopy,price);
-        printLoanDetails(name,dvdCopy,price);
+        loanController.addLoan(phoneNo,dvdCopy,price);
+        printLoanDetails(phoneNo,dvdCopy,price);
     }
 
     private void returnLoan()
     {
         System.out.println("      Return Loan Menu     ");
         System.out.println("---------------------------");
-        System.out.println("   Enter First & Last name ");
-        String name = getUserInput();
+        System.out.println("   Enter Phone Number      ");
+        String phoneNo = getUserInput();
         System.out.println("   Enter DVD name          ");
         String dvdCopy = getUserInput();
         System.out.println("   Enter Price             ");
         String price = getUserInput();
-        if(loanController.returnLoan(name,dvdCopy,price)) {
-            System.out.println("     " + name + " has been successfully deleted");
+        if(loanController.returnLoan(phoneNo,dvdCopy,price)) {
+            System.out.println("     " + phoneNo + " has been successfully deleted");
         }
         else
         {
             System.out.println("An error occurred when attempting");
-            System.out.println("    to delete " + name );
+            System.out.println("    to delete " + phoneNo );
         }
     }
 
@@ -103,16 +103,16 @@ public class LoanUI
     {
         System.out.println("    Loan Details Menu    ");
         System.out.println("---------------------------");
-        System.out.println("   Enter First & Last name ");
-        String name = getUserInput();
+        System.out.println("   Enter Phone Number      ");
+        String phoneNo = getUserInput();
         
-        loanController.getLoanDetails(name);
+        loanController.getLoanDetails(phoneNo);
     }
 
-    private void printLoanDetails(String name, String dvdCopy, String price)
+    private void printLoanDetails(String phoneNo, String dvdCopy, String price)
     {
         System.out.println("      Friend Details       ");
-        System.out.println("   Name: " + name );
+        System.out.println("   Phone Number: " + phoneNo );
         System.out.println("   DVD Name: " + dvdCopy );
         System.out.println("   Price: " + price );
     }

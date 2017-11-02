@@ -7,11 +7,21 @@ import java.util.HashSet;
 
 public class DvdContainer
 {
-    HashSet<Dvd> dvd;
+    private HashSet<Dvd> dvd;
+    public static DvdContainer instance = null;
     
-    public DvdContainer()
+    private DvdContainer()
     {
         dvd = new HashSet<Dvd>();
+    }
+    
+    public static DvdContainer getInstance()
+    {
+        if(instance == null)
+        {
+            instance = new DvdContainer();
+        }
+        return instance;
     }
     
     public void addDVD(long tempBarcode,String tempTitle ,String tempArtist,int tempPublicationDate)

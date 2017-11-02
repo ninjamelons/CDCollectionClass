@@ -85,15 +85,15 @@ public class PersonUI
     {
         System.out.println("     Delete Friend Menu    ");
         System.out.println("---------------------------");
-        System.out.println("   Enter First & Last name ");
-        String name = getUserInput();
-        if(personController.deletePerson(name)) {
-            System.out.println("     " + name + " has been successfully deleted");
+        System.out.println("   Enter Phone Number      ");
+        String phoneNo = getUserInput();
+        if(personController.deletePerson(phoneNo)) {
+            System.out.println("     " + phoneNo + " has been successfully deleted");
         }
         else
         {
             System.out.println("An error occurred when attempting");
-            System.out.println("    to delete " + name );
+            System.out.println("    to delete " + phoneNo );
         }
     }
 
@@ -101,10 +101,10 @@ public class PersonUI
     {
         System.out.println("    Friend Details Menu    ");
         System.out.println("---------------------------");
-        System.out.println("   Enter First & Last name ");
-        String name = getUserInput();
+        System.out.println("   Enter Phone Number      ");
+        String phoneNo = getUserInput();
         
-        personController.getPersonDetails(name);
+        personController.getPersonDetails(phoneNo);
     }
 
     private void printPersonDetails(String name, String address, String city,

@@ -15,11 +15,7 @@ public class Person
     private String city;
     private String postalCode;
     private String phoneNo;
-    
-    public Person()
-    {
-        
-    }
+    private Loan loan;
     
     public Person(String name, String address, String city, String postalCode, String phoneNo)
     {
@@ -28,6 +24,7 @@ public class Person
         this.city = city;
         this.postalCode = postalCode;
         this.phoneNo = phoneNo;
+        loan = null;
     }
     
     public String getName()
@@ -53,5 +50,15 @@ public class Person
     public String getPhoneNo()
     {
         return phoneNo;
+    }
+    
+    public Loan getLoan()
+    {
+        return null;
+    }
+    
+    public void setLoan(Loan loan)
+    {
+        this.loan = loan;
     }
 }

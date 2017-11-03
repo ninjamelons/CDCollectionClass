@@ -1,6 +1,7 @@
 package UI;
 import java.util.Scanner;
 import Control.PersonController;
+import Model.*;
 
 /**
  * Write a description of class PersonUI here.
@@ -36,7 +37,11 @@ public class PersonUI
                 checkPersonStatus();
                 break;
                 case "4":
+                updatePerson();
+                break;
+                case "5":
                 finished = true;
+                break;
                 default:
                 finished = true;
                 break;            
@@ -58,15 +63,16 @@ public class PersonUI
         System.out.println("1 -   Add New Friend       ");
         System.out.println("2 -   Delete Friend        ");
         System.out.println("3 -   Check Friend         ");
-        System.out.println("4 -   Return to Main Menu  ");
-        System.out.println("        Enter a number(1-4)");
+        System.out.println("4 -   Update Friend        ");
+        System.out.println("5 -   Return to Main Menu  ");
+        System.out.println("        Enter a number(1-5)");
     }
 
     private void addNewPerson()
     {
         System.out.println("      New Friend Menu      ");
         System.out.println("---------------------------");
-
+        
         System.out.println("   Enter First & Last name ");
         String name = getUserInput();
         System.out.println("   Enter Address           ");
@@ -79,6 +85,30 @@ public class PersonUI
         String phoneNo = getUserInput();
         personController.addPerson(name,address,city,postalCode,phoneNo);
         printPersonDetails(name,address,city,postalCode,phoneNo);
+    }
+
+    private void updatePerson()
+    {
+        System.out.println("     Update Friend Menu    ");
+        System.out.println("---------------------------");
+        System.out.println("   Enter Phone Number      ");
+        String phoneNo = getUserInput();
+        Person person = personController.getPerson(phoneNo);
+        
+        System.out.println("   Enter First & Last name ");
+        String name = getUserInput();
+        System.out.println("   Enter Address           ");
+        String address = getUserInput();
+        System.out.println("   Enter City name         ");
+        String city = getUserInput();
+        System.out.println("   Enter postal Code       ");
+        String postalCode = getUserInput();
+        if(personController.updatePerson(name,address,city,postalCode,phoneNo))
+        {
+            printPersonDetails(name,address,city,postalCode,phoneNo);
+        }
+        else
+            System.out.println("Failed to update details");
     }
 
     private void deletePerson()

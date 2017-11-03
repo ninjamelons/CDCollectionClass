@@ -21,6 +21,11 @@ public class PersonController
         personContainer.addPerson(name,address,city,postalCode,phoneNo);
     }
     
+    public boolean updatePerson(String name, String address, String city, String postalCode, String phoneNo)
+    {
+        return personContainer.updatePerson(name,address,city,postalCode,phoneNo);
+    }
+
     public boolean deletePerson(String phoneNo)
     {
         return personContainer.deletePerson(phoneNo);

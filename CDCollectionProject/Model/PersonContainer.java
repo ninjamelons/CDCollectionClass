@@ -22,12 +22,29 @@ public class PersonContainer
     
     public void addPerson(String name, String address, String city, String postalCode, String phoneNo)
     {
-        if(name != null)
+        if(phoneNo != null)
         {
             friends.add(new Person(name,address,city,postalCode,phoneNo));
         }
         else
             System.out.println("Error 404: Failed to add person");
+    }
+    
+    public boolean updatePerson(String name, String address, String city, String postalCode, String phoneNo)
+    {
+        boolean result = false;
+        for(Person person : friends)
+        {
+            if(person.getPhoneNo().equals(phoneNo))
+            {
+                person.setName(name);
+                person.setAddress(address);
+                person.setCity(city);
+                person.setPostalCode(postalCode);
+                result = true;
+            }
+        }
+        return result;
     }
     
     public boolean deletePerson(String phoneNo)
